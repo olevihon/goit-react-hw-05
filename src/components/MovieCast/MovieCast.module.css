@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.actorImg {
+  width: 150px;
+  margin-bottom: 16px;
+}

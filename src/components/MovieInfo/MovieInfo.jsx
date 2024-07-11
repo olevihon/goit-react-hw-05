@@ -20,7 +20,7 @@ export default function MovieInfo({ movie }) {
           </div>
         )}
 
-        {vote_average !== 0 && (
+        {vote_average !== 0 && vote_average && (
           <div className={css.detailsSection}>
             <div className={css.text}>
               User score: {`${Math.round(vote_average * 10)}%`}

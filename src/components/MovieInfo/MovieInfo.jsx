@@ -3,8 +3,6 @@ import css from './MovieInfo.module.css';
 export default function MovieInfo({ movie }) {
   const { poster_path, title, vote_average, overview, genres } = movie;
 
-  console.log('vote_average', vote_average);
-
   return (
     <div className={css.container}>
       {poster_path && title && (

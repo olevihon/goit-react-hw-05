@@ -3,6 +3,8 @@ import css from './MovieInfo.module.css';
 export default function MovieInfo({ movie }) {
   const { poster_path, title, vote_average, overview, genres } = movie;
 
+  console.log('vote_average', vote_average);
+
   return (
     <div className={css.container}>
       {poster_path && title && (
@@ -20,10 +22,10 @@ export default function MovieInfo({ movie }) {
           </div>
         )}
 
-        {vote_average && (
+        {vote_average !== 0 && vote_average && (
           <div className={css.detailsSection}>
             <div className={css.text}>
-              User score: {`${vote_average * 10}%`}
+              User score: {`${Math.round(vote_average * 10)}%`}
             </div>
           </div>
         )}

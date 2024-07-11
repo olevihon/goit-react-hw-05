@@ -43,23 +43,29 @@ export default function MovieDetailsPage() {
 
       {loading && <p>Loading movie info, please wait...</p>}
       {error && <p>Oops! There was an error, please reload this page!</p>}
-      {movie && <MovieInfo movie={movie} />}
+      {movie && (
+        <>
+          <MovieInfo movie={movie} />
 
-      <div className={css.additionalInfo}>
-        <div className={css.additionalInfoTitle}>Additional information</div>
-        <ul className={css.additionalInfoList}>
-          <li>
-            <NavLink to="cast">Cast</NavLink>
-          </li>
-          <li>
-            <NavLink to="reviews">Reviews</NavLink>
-          </li>
-        </ul>
-      </div>
+          <div className={css.additionalInfo}>
+            <div className={css.additionalInfoTitle}>
+              Additional information
+            </div>
+            <ul className={css.additionalInfoList}>
+              <li>
+                <NavLink to="cast">Cast</NavLink>
+              </li>
+              <li>
+                <NavLink to="reviews">Reviews</NavLink>
+              </li>
+            </ul>
+          </div>
 
-      <Suspense fallback={<div>Loading additional information...</div>}>
-        <Outlet />
-      </Suspense>
+          <Suspense fallback={<div>Loading additional information...</div>}>
+            <Outlet />
+          </Suspense>
+        </>
+      )}
     </div>
   );
 }
